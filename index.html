@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>��ֵ˰ƾ֤����ϵͳ</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>�9�6</text></svg>">
+    <title>增值税凭证管理系统</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
     <style>
-        /* ������CSS��ʽ - ��ǿ�� */
+        /* 完整的CSS样式 - 增强版 */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --primary-color: #1890ff;
@@ -30,7 +30,7 @@
             -webkit-font-smoothing: antialiased;
         }
         
-        /* ������ */
+        /* 导航栏 */
         .navbar {
             background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
             color: white;
@@ -71,7 +71,7 @@
             color: white;
         }
         
-        /* �����Ϳ�Ƭ */
+        /* 容器和卡片 */
         .container {
             padding: 20px;
             max-width: 900px;
@@ -88,7 +88,7 @@
             border: 1px solid rgba(0,0,0,0.06);
         }
         
-        /* ��ť */
+        /* 按钮 */
         .btn {
             padding: 12px 24px;
             border: none;
@@ -130,7 +130,7 @@
             background: #d9363e;
         }
         
-        /* ͳ�ƿ�Ƭ */
+        /* 统计卡片 */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -158,7 +158,7 @@
             font-size: 14px;
         }
         
-        /* ����Ԫ�� */
+        /* 表单元素 */
         .form-group {
             margin-bottom: 20px;
         }
@@ -187,7 +187,7 @@
             box-shadow: 0 0 0 3px rgba(24, 144, 255, 0.15);
         }
         
-        /* ͼƬ�ϴ� */
+        /* 图片上传 */
         .upload-area {
             border: 2px dashed var(--border-color);
             border-radius: 10px;
@@ -217,7 +217,7 @@
             display: block;
         }
         
-        /* ͼƬԤ�� */
+        /* 图片预览 */
         .image-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
@@ -245,7 +245,7 @@
             transform: scale(1.05);
         }
         
-        /* ƾ֤�б��� */
+        /* 凭证列表项 */
         .doc-item {
             padding: 18px;
             border-bottom: 1px solid #eee;
@@ -291,7 +291,7 @@
             font-size: 16px;
         }
         
-        /* �ײ����� */
+        /* 底部导航 */
         .bottom-nav {
             position: fixed;
             bottom: 0;
@@ -334,7 +334,7 @@
             margin-bottom: 4px;
         }
         
-        /* ģ̬�� */
+        /* 模态框 */
         .modal {
             display: none;
             position: fixed;
@@ -376,7 +376,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* ��״̬ */
+        /* 空状态 */
         .empty-state {
             text-align: center;
             padding: 60px 20px;
@@ -389,7 +389,7 @@
             margin-bottom: 20px;
         }
         
-        /* ���ض��� */
+        /* 加载动画 */
         .loading {
             display: inline-block;
             width: 20px;
@@ -405,7 +405,7 @@
             100% { transform: rotate(360deg); }
         }
         
-        /* ����� */
+        /* 警告框 */
         .alert {
             padding: 12px 16px;
             border-radius: 8px;
@@ -425,7 +425,7 @@
             color: #d48806;
         }
         
-        /* ����ҳ */
+        /* 详情页 */
         .detail-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -452,7 +452,7 @@
             font-size: 16px;
         }
         
-        /* ��Ӧʽ���� */
+        /* 响应式调整 */
         @media (max-width: 768px) {
             .container {
                 padding: 15px;
@@ -493,120 +493,120 @@
     </style>
 </head>
 <body>
-    <!-- ���������� -->
+    <!-- 顶部导航栏 -->
     <div class="navbar">
         <div class="navbar-title">
-            <span>�9�6</span>
-            <span>��ֵ˰ƾ֤����ϵͳ</span>
+            <span>📊</span>
+            <span>增值税凭证管理系统</span>
         </div>
         <div class="nav-links">
-            <a href="javascript:void(0)" onclick="loadPage('home')" class="nav-link">��ҳ</a>
-            <a href="javascript:void(0)" onclick="loadPage('upload')" class="nav-link">�ϴ�</a>
-            <a href="javascript:void(0)" onclick="loadPage('list')" class="nav-link">ƾ֤</a>
-            <a href="javascript:void(0)" onclick="showBackupModal()" class="nav-link">����</a>
+            <a href="javascript:void(0)" onclick="loadPage('home')" class="nav-link">首页</a>
+            <a href="javascript:void(0)" onclick="loadPage('upload')" class="nav-link">上传</a>
+            <a href="javascript:void(0)" onclick="loadPage('list')" class="nav-link">凭证</a>
+            <a href="javascript:void(0)" onclick="showBackupModal()" class="nav-link">备份</a>
         </div>
     </div>
 
-    <!-- ���������� -->
+    <!-- 主内容区域 -->
     <div class="container" id="content">
-        <!-- ��̬���� -->
+        <!-- 动态内容 -->
     </div>
 
-    <!-- �ײ����� -->
+    <!-- 底部导航 -->
     <div class="bottom-nav">
         <button class="nav-btn active" onclick="loadPage('home')">
-            <span class="nav-icon">�9�2</span>
-            <span>��ҳ</span>
+            <span class="nav-icon">🏠</span>
+            <span>首页</span>
         </button>
         <button class="nav-btn" onclick="loadPage('upload')">
-            <span class="nav-icon">�9�2</span>
-            <span>�ϴ�</span>
+            <span class="nav-icon">📤</span>
+            <span>上传</span>
         </button>
         <button class="nav-btn" onclick="loadPage('list')">
-            <span class="nav-icon">�9�7</span>
-            <span>ƾ֤</span>
+            <span class="nav-icon">📁</span>
+            <span>凭证</span>
         </button>
         <button class="nav-btn" onclick="showBackupModal()">
-            <span class="nav-icon">�9�4</span>
-            <span>����</span>
+            <span class="nav-icon">💾</span>
+            <span>备份</span>
         </button>
     </div>
 
-    <!-- ��ģ̬�� -->
+    <!-- 主模态框 -->
     <div id="modal" class="modal">
         <div class="modal-content">
-            <h3 id="modal-title" class="modal-title">��ʾ</h3>
-            <p id="modal-message">����һ����Ϣ</p>
+            <h3 id="modal-title" class="modal-title">提示</h3>
+            <p id="modal-message">这是一条消息</p>
             <div style="margin-top: 25px; text-align: right; display: flex; gap: 10px; justify-content: flex-end;">
-                <button class="btn btn-secondary" onclick="closeModal()">ȡ��</button>
-                <button id="modal-confirm" class="btn" onclick="confirmModalAction()">ȷ��</button>
+                <button class="btn btn-secondary" onclick="closeModal()">取消</button>
+                <button id="modal-confirm" class="btn" onclick="confirmModalAction()">确定</button>
             </div>
         </div>
     </div>
 
-    <!-- ����/�ָ�ģ̬�� -->
+    <!-- 备份/恢复模态框 -->
     <div id="backupModal" class="modal">
         <div class="modal-content">
-            <h3 style="margin-bottom: 20px;">�9�4 ���ݱ�����ָ�</h3>
+            <h3 style="margin-bottom: 20px;">💾 数据备份与恢复</h3>
             
             <div class="alert alert-info" style="margin-bottom: 20px;">
-                <strong>��Ҫ���ѣ�</strong>�������ݽ���������������أ��붨�ڱ����Է����ݶ�ʧ��
+                <strong>重要提醒：</strong>所有数据仅保存在浏览器本地，请定期备份以防数据丢失！
             </div>
             
             <div style="margin-bottom: 25px;">
-                <h4 style="margin-bottom: 10px;">�9�2 ��������</h4>
+                <h4 style="margin-bottom: 10px;">📤 导出备份</h4>
                 <p style="color: var(--text-secondary); margin-bottom: 15px; font-size: 14px;">
-                    ��������ƾ֤����ΪJSON�ļ��������ڱ��ݻ�Ǩ�����ݡ�
+                    导出所有凭证数据为JSON文件，可用于备份或迁移数据。
                 </p>
                 <button class="btn" onclick="exportData()" style="width: 100%;">
-                    <span>�8�9�1�5</span> ���������ļ�
+                    <span>⬇️</span> 导出数据文件
                 </button>
             </div>
             
             <div style="margin-bottom: 25px;">
-                <h4 style="margin-bottom: 10px;">�9�3 ���뱸��</h4>
+                <h4 style="margin-bottom: 10px;">📥 导入备份</h4>
                 <p style="color: var(--text-secondary); margin-bottom: 15px; font-size: 14px;">
-                    ��JSON�ļ��ָ����ݣ�ע����Ḳ���������ݡ�
+                    从JSON文件恢复数据，注意这会覆盖现有数据。
                 </p>
                 <div class="upload-area" onclick="document.getElementById('importFile').click()" style="padding: 20px;">
-                    <div class="upload-icon">�9�7</div>
-                    <span class="upload-text">���ѡ�񱸷��ļ�</span>
-                    <span class="upload-hint">֧��JSON��ʽ</span>
+                    <div class="upload-icon">📁</div>
+                    <span class="upload-text">点击选择备份文件</span>
+                    <span class="upload-hint">支持JSON格式</span>
                 </div>
                 <input type="file" id="importFile" accept=".json" style="display: none;" onchange="importData(event)">
             </div>
             
             <div>
-                <h4 style="margin-bottom: 10px;">�9�9�1�5 ���ݹ���</h4>
+                <h4 style="margin-bottom: 10px;">🗑️ 数据管理</h4>
                 <p style="color: var(--text-secondary); margin-bottom: 15px; font-size: 14px;">
-                    ������б������ݣ���ȷ���ѱ�����Ҫ���ݡ�
+                    清空所有本地数据，请确保已备份重要数据。
                 </p>
                 <div style="display: flex; gap: 10px;">
                     <button class="btn btn-secondary" onclick="showClearConfirm()" style="flex: 1;">
-                        ��ձ��ػ���
+                        清空本地缓存
                     </button>
                     <button class="btn btn-danger" onclick="clearAllData()" style="flex: 1;">
-                        ɾ����������
+                        删除所有数据
                     </button>
                 </div>
             </div>
             
             <div style="margin-top: 30px; text-align: center;">
                 <button class="btn btn-secondary" onclick="closeBackupModal()">
-                    �ر�
+                    关闭
                 </button>
             </div>
         </div>
     </div>
 
     <script>
-        // ==================== ȫ�ֱ��� ====================
+        // ==================== 全局变量 ====================
         let documents = JSON.parse(localStorage.getItem('vat-documents') || '[]');
         let currentImages = [];
         let currentDetailId = null;
         let modalActionCallback = null;
 
-        // ==================== ���ߺ��� ====================
+        // ==================== 工具函数 ====================
         function showMessage(title, message, confirmCallback = null) {
             document.getElementById('modal-title').textContent = title;
             document.getElementById('modal-message').textContent = message;
@@ -651,9 +651,9 @@
             return 'doc_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
         }
 
-        // ==================== ҳ����غ��� ====================
+        // ==================== 页面加载函数 ====================
         function loadPage(page) {
-            // ���µ���״̬
+            // 更新导航状态
             document.querySelectorAll('.nav-btn').forEach((btn, index) => {
                 btn.classList.remove('active');
             });
@@ -679,14 +679,14 @@
             
             document.getElementById('content').innerHTML = content;
             
-            // ����������
+            // 滚动到顶部
             window.scrollTo(0, 0);
         }
 
-        // ==================== ��ҳ ====================
+        // ==================== 首页 ====================
         function loadHomePage() {
             const totalAmount = documents.reduce((sum, doc) => sum + (doc.amount || 0), 0);
-            const invoiceCount = documents.filter(doc => doc.type === '��Ʊ').length;
+            const invoiceCount = documents.filter(doc => doc.type === '发票').length;
             const recentCount = documents.filter(doc => {
                 const docDate = new Date(doc.date || doc.uploadTime);
                 const now = new Date();
@@ -694,13 +694,13 @@
                 return diffDays <= 30;
             }).length;
             
-            // ����Ƿ���Ҫ��������
+            // 检查是否需要备份提醒
             const lastBackup = localStorage.getItem('vat-last-backup');
             let backupAlert = '';
             if (!lastBackup || (Date.now() - new Date(lastBackup).getTime()) > 7 * 24 * 60 * 60 * 1000) {
                 backupAlert = `
                     <div class="alert alert-warning" onclick="showBackupModal()" style="cursor: pointer;">
-                        �7�2�1�5 ���г���7��δ�������ݣ��������������Է����ݶ�ʧ��
+                        ⚠️ 您有超过7天未备份数据，建议立即备份以防数据丢失！
                     </div>
                 `;
             }
@@ -710,26 +710,26 @@
                 
                 <div class="card">
                     <h2 style="margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
-                        <span>�9�6</span>
-                        <span>ͳ�Ƹ���</span>
+                        <span>📊</span>
+                        <span>统计概览</span>
                     </h2>
                     
                     <div class="stats-grid">
                         <div class="stat-card">
                             <div class="stat-value">${documents.length}</div>
-                            <div class="stat-label">��ƾ֤��</div>
+                            <div class="stat-label">总凭证数</div>
                         </div>
                         <div class="stat-card">
                             <div class="stat-value">${invoiceCount}</div>
-                            <div class="stat-label">��Ʊ����</div>
+                            <div class="stat-label">发票数量</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-value">�0�6${totalAmount.toFixed(2)}</div>
-                            <div class="stat-label">�ܽ��</div>
+                            <div class="stat-value">¥${totalAmount.toFixed(2)}</div>
+                            <div class="stat-label">总金额</div>
                         </div>
                         <div class="stat-card">
                             <div class="stat-value">${recentCount}</div>
-                            <div class="stat-label">���30��</div>
+                            <div class="stat-label">最近30天</div>
                         </div>
                     </div>
                 </div>
@@ -737,11 +737,11 @@
                 <div class="card">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                         <h2 style="display: flex; align-items: center; gap: 10px;">
-                            <span>�9�7</span>
-                            <span>���ƾ֤</span>
+                            <span>📋</span>
+                            <span>最近凭证</span>
                         </h2>
                         <button class="btn" onclick="loadPage('upload')">
-                            <span>+</span> ������ƾ֤
+                            <span>+</span> 添加新凭证
                         </button>
                     </div>
                     
@@ -753,11 +753,11 @@
                                         <div style="flex: 1;">
                                             <div class="doc-title">${escapeHtml(doc.title)}</div>
                                             <div class="doc-meta">
-                                                <span>${doc.type || '����'}</span>
-                                                <span>�6�1</span>
+                                                <span>${doc.type || '其他'}</span>
+                                                <span>•</span>
                                                 <span>${doc.date || ''}</span>
-                                                <span>�6�1</span>
-                                                <span class="doc-amount">�0�6${(doc.amount || 0).toFixed(2)}</span>
+                                                <span>•</span>
+                                                <span class="doc-amount">¥${(doc.amount || 0).toFixed(2)}</span>
                                             </div>
                                         </div>
                                         <div style="color: var(--text-light); font-size: 12px;">
@@ -777,19 +777,19 @@
                         ${documents.length > 5 ? `
                             <div style="text-align: center; margin-top: 20px;">
                                 <button class="btn btn-secondary" onclick="loadPage('list')">
-                                    �鿴ȫ��ƾ֤ (${documents.length})
+                                    查看全部凭证 (${documents.length})
                                 </button>
                             </div>
                         ` : ''}
                     ` : `
                         <div class="empty-state">
-                            <div class="empty-icon">�9�7</div>
-                            <p style="margin-bottom: 15px;">����ƾ֤��¼</p>
+                            <div class="empty-icon">📁</div>
+                            <p style="margin-bottom: 15px;">暂无凭证记录</p>
                             <p style="color: var(--text-light); font-size: 14px; margin-bottom: 20px;">
-                                ��ʼ��¼������ֵ˰ƾ֤�ɣ�
+                                开始记录您的增值税凭证吧！
                             </p>
                             <button class="btn" onclick="loadPage('upload')">
-                                <span>�9�2</span> �ϴ���һ��ƾ֤
+                                <span>📤</span> 上传第一个凭证
                             </button>
                         </div>
                     `}
@@ -797,20 +797,20 @@
                 
                 <div class="card">
                     <h2 style="margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
-                        <span>�9�5</span>
-                        <span>ʹ��˵��</span>
+                        <span>📝</span>
+                        <span>使用说明</span>
                     </h2>
                     
                     <div style="display: grid; gap: 15px;">
                         <div style="display: flex; gap: 15px; align-items: flex-start;">
                             <div style="background: #e6f7ff; border-radius: 50%; width: 30px; height: 30px; 
                                  display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                �9�2
+                                📸
                             </div>
                             <div>
-                                <div style="font-weight: 500; margin-bottom: 4px;">�ϴ�ƾ֤��Ƭ</div>
+                                <div style="font-weight: 500; margin-bottom: 4px;">上传凭证照片</div>
                                 <div style="color: var(--text-secondary); font-size: 14px;">
-                                    ֧���ϴ���ͬ����Ʊ�����ݵ���Ƭ���Զ����浽����
+                                    支持上传合同、发票、单据等照片，自动保存到本地
                                 </div>
                             </div>
                         </div>
@@ -818,12 +818,12 @@
                         <div style="display: flex; gap: 15px; align-items: flex-start;">
                             <div style="background: #f6ffed; border-radius: 50%; width: 30px; height: 30px; 
                                  display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                �9�7
+                                📋
                             </div>
                             <div>
-                                <div style="font-weight: 500; margin-bottom: 4px;">������Ϣ��¼</div>
+                                <div style="font-weight: 500; margin-bottom: 4px;">完整信息记录</div>
                                 <div style="color: var(--text-secondary); font-size: 14px;">
-                                    ��¼���׽����ڡ��Է���λ����ϸ��Ϣ
+                                    记录交易金额、日期、对方单位等详细信息
                                 </div>
                             </div>
                         </div>
@@ -831,12 +831,12 @@
                         <div style="display: flex; gap: 15px; align-items: flex-start;">
                             <div style="background: #fff7e6; border-radius: 50%; width: 30px; height: 30px; 
                                  display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                �9�4
+                                💾
                             </div>
                             <div>
-                                <div style="font-weight: 500; margin-bottom: 4px;">���ڱ�������</div>
+                                <div style="font-weight: 500; margin-bottom: 4px;">定期备份数据</div>
                                 <div style="color: var(--text-secondary); font-size: 14px;">
-                                    ���ݱ�������������أ��붨�ڵ��������Է���ʧ
+                                    数据保存在浏览器本地，请定期导出备份以防丢失
                                 </div>
                             </div>
                         </div>
@@ -844,12 +844,12 @@
                         <div style="display: flex; gap: 15px; align-items: flex-start;">
                             <div style="background: #f9f0ff; border-radius: 50%; width: 30px; height: 30px; 
                                  display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                �7�2�1�5
+                                ⚖️
                             </div>
                             <div>
-                                <div style="font-weight: 500; margin-bottom: 4px;">����˰��Ҫ��</div>
+                                <div style="font-weight: 500; margin-bottom: 4px;">符合税务要求</div>
                                 <div style="color: var(--text-secondary); font-size: 14px;">
-                                    ������ֵ˰ԭʼƾ֤����涨������˰��˲�
+                                    满足增值税原始凭证留存规定，便于税务核查
                                 </div>
                             </div>
                         </div>
@@ -858,122 +858,122 @@
             `;
         }
 
-        // ==================== �ϴ�ҳ�� ====================
+        // ==================== 上传页面 ====================
         function loadUploadPage() {
             return `
                 <div class="card">
                     <h2 style="margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
-                        <span>�9�2</span>
-                        <span>�ϴ���ƾ֤</span>
+                        <span>📤</span>
+                        <span>上传新凭证</span>
                     </h2>
                     
-                    <!-- ͼƬ�ϴ����� -->
+                    <!-- 图片上传区域 -->
                     <div class="form-group">
-                        <label class="form-label">�9�2 �ϴ�ƾ֤��Ƭ��֧�ֶ�ѡ�����10�ţ�</label>
+                        <label class="form-label">📸 上传凭证照片（支持多选，最多10张）</label>
                         <div class="upload-area" id="uploadArea" 
                              onclick="document.getElementById('fileInput').click()">
-                            <div class="upload-icon">�9�1</div>
-                            <span class="upload-text">���ѡ����Ƭ����ק��������</span>
-                            <span class="upload-hint">֧�� JPG��PNG ��ʽ��ÿ�Ų����� 5MB</span>
+                            <div class="upload-icon">📷</div>
+                            <span class="upload-text">点击选择照片或拖拽到此区域</span>
+                            <span class="upload-hint">支持 JPG、PNG 格式，每张不超过 5MB</span>
                             <div style="margin-top: 10px; color: var(--primary-color); font-size: 13px;">
-                                ��ѡ�� ${currentImages.length} ����Ƭ
+                                已选择 ${currentImages.length} 张照片
                             </div>
                         </div>
                         <input type="file" id="fileInput" accept="image/*" multiple 
                                style="display: none;" onchange="handleImageUpload(event)">
                         
-                        <!-- ͼƬԤ�� -->
+                        <!-- 图片预览 -->
                         <div id="imagePreview" class="image-grid">
                             ${currentImages.map((img, index) => `
                                 <div class="preview-item">
-                                    <img src="${img.preview}" class="preview-img" alt="ƾ֤��Ƭ">
+                                    <img src="${img.preview}" class="preview-img" alt="凭证照片">
                                     <button class="remove-btn" onclick="removeImage(${index})" 
                                             style="position: absolute; top: 5px; right: 5px; width: 24px; height: 24px; 
                                                    background: rgba(0,0,0,0.7); color: white; border-radius: 50%; 
                                                    border: none; cursor: pointer; display: flex; align-items: center; 
-                                                   justify-content: center; font-size: 16px;">��</button>
+                                                   justify-content: center; font-size: 16px;">×</button>
                                 </div>
                             `).join('')}
                         </div>
                     </div>
                     
-                    <!-- ���� -->
+                    <!-- 表单 -->
                     <div class="form-group">
-                        <label class="form-label">�9�5 ƾ֤���� <span style="color: var(--danger-color);">*</span></label>
+                        <label class="form-label">📝 凭证标题 <span style="color: var(--danger-color);">*</span></label>
                         <input type="text" class="form-control" id="docTitle" 
-                               placeholder="���磺2024��1�²ɹ���Ʊ" required
+                               placeholder="例如：2024年1月采购发票" required
                                maxlength="100">
                     </div>
                     
                     <div class="form-group">
-                        <label class="form-label">�9�5�1�5 ƾ֤����</label>
+                        <label class="form-label">🏷️ 凭证类型</label>
                         <select class="form-control" id="docType">
-                            <option value="��Ʊ">��Ʊ</option>
-                            <option value="��ͬ">��ͬ</option>
-                            <option value="���ⵥ">���ⵥ</option>
-                            <option value="��ⵥ">��ⵥ</option>
-                            <option value="���䵥">���䵥</option>
-                            <option value="������">������</option>
-                            <option value="���лص�">���лص�</option>
-                            <option value="����">����</option>
+                            <option value="发票">发票</option>
+                            <option value="合同">合同</option>
+                            <option value="出库单">出库单</option>
+                            <option value="入库单">入库单</option>
+                            <option value="运输单">运输单</option>
+                            <option value="过磅单">过磅单</option>
+                            <option value="银行回单">银行回单</option>
+                            <option value="其他">其他</option>
                         </select>
                     </div>
                     
                     <div class="form-group">
-                        <label class="form-label">�9�0 ���׽�Ԫ��</label>
+                        <label class="form-label">💰 交易金额（元）</label>
                         <input type="number" class="form-control" id="docAmount" 
                                placeholder="0.00" step="0.01" min="0">
                     </div>
                     
                     <div class="form-group">
-                        <label class="form-label">�9�4 ���׷�����</label>
+                        <label class="form-label">🏢 交易方名称</label>
                         <input type="text" class="form-control" id="docCompany" 
-                               placeholder="������Է���˾/��������"
+                               placeholder="请输入对方公司/个人名称"
                                maxlength="100">
                     </div>
                     
                     <div class="form-group">
-                        <label class="form-label">�9�1 ��������</label>
+                        <label class="form-label">📅 交易日期</label>
                         <input type="date" class="form-control" id="docDate" 
                                value="${new Date().toISOString().split('T')[0]}">
                     </div>
                     
                     <div class="form-group">
-                        <label class="form-label">�9�5 ��ע˵��</label>
+                        <label class="form-label">📝 备注说明</label>
                         <textarea class="form-control" id="docRemark" rows="3" 
-                                  placeholder="�����뱸ע��Ϣ���罻�����ݡ����������"
+                                  placeholder="请输入备注信息，如交易内容、特殊条款等"
                                   maxlength="500"></textarea>
                     </div>
                     
                     <div style="display: flex; gap: 15px; margin-top: 30px;">
                         <button class="btn btn-secondary" onclick="resetUploadForm()" style="flex: 1;">
-                            <span>�9�9�1�5</span> ��ձ���
+                            <span>🗑️</span> 清空表单
                         </button>
                         <button class="btn" onclick="saveDocument()" style="flex: 1;">
-                            <span>�9�4</span> ����ƾ֤
+                            <span>💾</span> 保存凭证
                         </button>
                     </div>
                 </div>
             `;
         }
 
-        // ==================== ���ݲ������� ====================
+        // ==================== 数据操作函数 ====================
         function handleImageUpload(event) {
             const files = Array.from(event.target.files);
             const maxFiles = 10;
             
             if (currentImages.length + files.length > maxFiles) {
-                showMessage('�ϴ�����', `���ֻ���ϴ�${maxFiles}����Ƭ����ǰ��ѡ��${currentImages.length}��`);
+                showMessage('上传限制', `最多只能上传${maxFiles}张照片，当前已选择${currentImages.length}张`);
                 return;
             }
             
             const validFiles = files.filter(file => {
                 if (file.size > 5 * 1024 * 1024) {
-                    showMessage('�ļ�����', `${file.name} ����5MB����`);
+                    showMessage('文件过大', `${file.name} 超过5MB限制`);
                     return false;
                 }
                 if (!file.type.startsWith('image/')) {
-                    showMessage('��ʽ����', `${file.name} ����ͼƬ�ļ�`);
+                    showMessage('格式错误', `${file.name} 不是图片文件`);
                     return false;
                 }
                 return true;
@@ -1000,12 +1000,12 @@
             
             const previewHtml = currentImages.map((img, index) => `
                 <div class="preview-item">
-                    <img src="${img.preview}" class="preview-img" alt="ƾ֤��Ƭ">
-                    <button class="remove-btn" onclick="removeImage(${index})">��</button>
+                    <img src="${img.preview}" class="preview-img" alt="凭证照片">
+                    <button class="remove-btn" onclick="removeImage(${index})">×</button>
                 </div>
             `).join('');
             
-            previewContainer.innerHTML = previewHtml || '<div style="text-align: center; color: var(--text-light); padding: 20px;">������Ƭ</div>';
+            previewContainer.innerHTML = previewHtml || '<div style="text-align: center; color: var(--text-light); padding: 20px;">暂无照片</div>';
         }
 
         function removeImage(index) {
@@ -1017,12 +1017,12 @@
         }
 
         function resetUploadForm() {
-            if (currentImages.length > 0 && !confirm('ȷ��Ҫ����������ϴ�����Ƭ��')) {
+            if (currentImages.length > 0 && !confirm('确定要清空所有已上传的照片吗？')) {
                 return;
             }
             
             document.getElementById('docTitle').value = '';
-            document.getElementById('docType').value = '��Ʊ';
+            document.getElementById('docType').value = '发票';
             document.getElementById('docAmount').value = '';
             document.getElementById('docCompany').value = '';
             document.getElementById('docDate').value = new Date().toISOString().split('T')[0];
@@ -1039,14 +1039,14 @@
 
         function saveDocument() {
             const title = document.getElementById('docTitle')?.value.trim() || '';
-            const type = document.getElementById('docType')?.value || '��Ʊ';
+            const type = document.getElementById('docType')?.value || '发票';
             const amount = parseFloat(document.getElementById('docAmount')?.value) || 0;
             const company = document.getElementById('docCompany')?.value.trim() || '';
             const date = document.getElementById('docDate')?.value || new Date().toISOString().split('T')[0];
             const remark = document.getElementById('docRemark')?.value.trim() || '';
             
             if (!title) {
-                showMessage('��֤����', '������ƾ֤����');
+                showMessage('验证错误', '请输入凭证标题');
                 document.getElementById('docTitle').focus();
                 return;
             }
@@ -1071,14 +1071,14 @@
             documents.unshift(newDoc);
             saveToLocalStorage();
             
-            showMessage('����ɹ�', `ƾ֤"${title}"�ѱ���ɹ���`, () => {
+            showMessage('保存成功', `凭证"${title}"已保存成功！`, () => {
                 loadPage('home');
             });
             
             resetUploadForm();
         }
 
-        // ==================== ���ݹ��� ====================
+        // ==================== 备份功能 ====================
         function exportData() {
             const exportData = {
                 version: '1.0',
@@ -1092,7 +1092,7 @@
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `��ֵ˰ƾ֤����_${new Date().toISOString().split('T')[0]}.json`;
+            a.download = `增值税凭证备份_${new Date().toISOString().split('T')[0]}.json`;
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
@@ -1100,7 +1100,7 @@
             
             localStorage.setItem('vat-last-backup', new Date().toISOString());
             closeBackupModal();
-            showMessage('�����ɹ�', `�ѵ���${documents.length}��ƾ֤���ݣ������Ʊ��汸���ļ���`);
+            showMessage('导出成功', `已导出${documents.length}条凭证数据，请妥善保存备份文件。`);
         }
 
         function importData(event) {
@@ -1108,7 +1108,7 @@
             if (!file) return;
             
             if (!file.name.endsWith('.json')) {
-                showMessage('��ʽ����', '��ѡ��JSON��ʽ�ı����ļ�');
+                showMessage('格式错误', '请选择JSON格式的备份文件');
                 return;
             }
             
@@ -1118,10 +1118,10 @@
                     const importData = JSON.parse(e.target.result);
                     
                     if (!importData.documents || !Array.isArray(importData.documents)) {
-                        throw new Error('��Ч�ı����ļ���ʽ');
+                        throw new Error('无效的备份文件格式');
                     }
                     
-                    showMessage('ȷ�ϵ���', `������${importData.documents.length}��ƾ֤���ݣ���Ḳ���������ݣ�ȷ��Ҫ������`, () => {
+                    showMessage('确认导入', `将导入${importData.documents.length}条凭证数据，这会覆盖现有数据，确定要继续吗？`, () => {
                         documents.forEach(doc => {
                             if (doc.images) {
                                 doc.images.forEach(img => {
@@ -1140,11 +1140,11 @@
                         saveToLocalStorage();
                         event.target.value = '';
                         closeBackupModal();
-                        showMessage('����ɹ�', `�ѳɹ�����${documents.length}��ƾ֤����`);
+                        showMessage('导入成功', `已成功导入${documents.length}条凭证数据`);
                         loadPage('home');
                     });
                 } catch (error) {
-                    showMessage('����ʧ��', '�ļ�����ʧ�ܣ���ȷ��ѡ����ȷ�ı����ļ�');
+                    showMessage('导入失败', '文件解析失败，请确保选择正确的备份文件');
                 }
             };
             
@@ -1152,7 +1152,7 @@
         }
 
         function clearAllData() {
-            showMessage('����', 'ȷ��Ҫɾ������ƾ֤�����𣿴˲������ɻָ�����ȷ���ѱ�����Ҫ���ݡ�', () => {
+            showMessage('警告', '确定要删除所有凭证数据吗？此操作不可恢复，请确保已备份重要数据。', () => {
                 documents.forEach(doc => {
                     if (doc.images) {
                         doc.images.forEach(img => {
@@ -1168,12 +1168,12 @@
                 localStorage.clear();
                 
                 closeBackupModal();
-                showMessage('����ɹ�', '�������������');
+                showMessage('清除成功', '所有数据已清除');
                 loadPage('home');
             });
         }
 
-        // ==================== �������� ====================
+        // ==================== 辅助函数 ====================
         function escapeHtml(text) {
             const div = document.createElement('div');
             div.textContent = text;
@@ -1181,9 +1181,9 @@
         }
 
         function formatDate(dateString) {
-            if (!dateString) return 'δ֪';
+            if (!dateString) return '未知';
             const date = new Date(dateString);
-            if (isNaN(date.getTime())) return '��Ч����';
+            if (isNaN(date.getTime())) return '无效日期';
             
             const year = date.getFullYear();
             const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -1191,7 +1191,7 @@
             return `${year}-${month}-${day}`;
         }
 
-        // ==================== ��ʼ�� ====================
+        // ==================== 初始化 ====================
         window.onload = function() {
             loadPage('home');
             
@@ -1203,7 +1203,7 @@
                 if (e.target === this) closeBackupModal();
             });
             
-            // ������ק�ϴ�
+            // 设置拖拽上传
             const uploadArea = document.getElementById('uploadArea');
             if (uploadArea) {
                 uploadArea.addEventListener('dragover', (e) => {
@@ -1227,7 +1227,7 @@
             }
         };
 
-        // ==================== ȫ�ֵ��� ====================
+        // ==================== 全局导出 ====================
         window.loadPage = loadPage;
         window.showBackupModal = showBackupModal;
         window.closeBackupModal = closeBackupModal;
